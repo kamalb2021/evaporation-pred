@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Covid19 Pneumonia Classification</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Evaporation Model using Machine Learning</h1>
+
+      <div class="columns">
+        <div class="column">
+          <h2 class="subtitle">Please fill the values</h2>
+          <form action="/predict" method="POST" >
+            <div class="field">
+              <label class="label">Max Temperature</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Max Temperature" name="maxt">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Min Temperature</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Min Temperature" name="mint">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">RH1</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="RH1" name="rh1">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">RF</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="RF" name="rf">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">WS</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="WS" name="ws">
+              </div>
+            </div>
+            
+            
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link">Submit</button>
+              </div>
+              <div class="control">
+                <button class="button is-link is-light">Cancel</button>
+              </div>
+            </div>
+            
+          </form>
+          <br>
+          <div id="prediction" class="message" >Evaporation Prediction: {{response}} </div>
+      
+        </div>
+        </div>
+    </div>
+      </div>
+      
+    </div>
+    
+  </section>
+      
+  <footer class="footer">
+    <div class="content">
+      <p>
+        <div class="columns">
+          <div class="column">
+            <strong>Tech Stack</strong>
+            <ul>
+              <li>Tensorflow 2.3</li>
+              <li>Flask</li>
+              <li>Keras</li>
+              <li>Python</li>
+              <li>Bulma (UI)</li>
+              <li>Javascript</li>
+              <li>HTML</li>
+            </ul>
+          </div>
+          <div class="column">
+            <strong>Socials</strong>
+            <ul>
+              <li>
+                <span class="icon">
+                  <i class="fab fa-github-alt"></i>
+                </span>
+                <a href="#">@kamalbatra</a>
+              </li>
+              <li>
+                <span class="icon">
+                  <i class="fab fa-youtube"></i>
+                </span>
+                <a href="#">@kamalbatra</a>
+                Please subscribe !
+              </li>
+            </ul>
+          </div>
+        </div>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const fileInput = document.querySelector('#file input[type=file]');
+    fileInput.onchange = () => {
+      if (fileInput.files.length > 0) {
+        const fileName = document.querySelector('#file .file-name');
+        fileName.textContent = fileInput.files[0].name;
+      }
+    }
+
+    document.querySelector('#delete').addEventListener('click', () => {
+      document.querySelector('#prediction').setAttribute('hidden', true)
+    })
+  </script>
+</body>
+
+</html>

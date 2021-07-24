@@ -1,0 +1,8 @@
+flask==1.1.2
+joblib==1.0.1
+numpy==1.19.2
+tensorflow-cpu==2.5.0
+Jinja2==3.0.1
+Werkzeug==2.0.1
+gunicorn==20.1.0
+scikit-learn==0.23.2
